@@ -1,17 +1,16 @@
 class FtxuiC < Formula
   desc "C bindings for the FTXUI terminal UI library"
   homepage "https://github.com/nassendelft/ftxui-c"
-  url "https://github.com/nassendelft/ftxui-c/releases/download/v1.0.5/ftxui-c-v1.0.5-src.tar.gz"
-  sha256 "091dbc5f8e8fc101911a116978dc333516f926b37926d73e05bbd4649328b3d8"
+  url "https://github.com/nassendelft/ftxui-c/releases/download/v1.1.0/ftxui-c-v1.1.0-src.tar.gz"
+  sha256 "d8b686bf2e774a4cd6eeab56d572cb086ae91b3b241f01bb7aa7f9f6efe16c14"
   license "GPL-3.0-only"
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-B", "build", "-DCMAKE_BUILD_TYPE=Release"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    lib.install OS.mac? ? "build/libftxui_c_binding.dylib" : "build/libftxui_c_binding.so"
-    include.install "ftxui_c_api.h"
+    system "cmake", "--install", "build"
   end
 
   test do
