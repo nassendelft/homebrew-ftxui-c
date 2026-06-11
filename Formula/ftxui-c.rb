@@ -1,8 +1,8 @@
 class FtxuiC < Formula
   desc "C bindings for the FTXUI terminal UI library"
   homepage "https://github.com/nassendelft/ftxui-c"
-  url "https://github.com/nassendelft/ftxui-c/releases/download/v1.1.0/ftxui-c-v1.1.0-src.tar.gz"
-  sha256 "d8b686bf2e774a4cd6eeab56d572cb086ae91b3b241f01bb7aa7f9f6efe16c14"
+  url "https://github.com/nassendelft/ftxui-c/releases/download/v1.2.0/ftxui-c-v1.2.0-src.tar.gz"
+  sha256 "f30fbaef7657882ac8a3b6ec98219dce6f253011015be40daa003c9e1a4785f8"
   license "GPL-3.0-only"
 
   depends_on "cmake" => :build
